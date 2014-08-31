@@ -16,7 +16,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.transaction.annotation.Transactional;
 
+import util.MySpringUtil;
 import util.MyUtil;
+import cock.util.SSHUtil;
 
 import com.flow.common.dao.IPublicDao;
 
@@ -495,6 +497,7 @@ public class PublicDao implements IPublicDao {
 		} catch (Exception e) { return new ArrayList<T>();}
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public <T> Integer getEntityMaxId(Class<T> c) {
 		String sql = "select max(t.id) from " + c.getSimpleName().toLowerCase() + " as t";

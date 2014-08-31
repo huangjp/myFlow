@@ -1,5 +1,6 @@
 package com.flow.engine.web;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -9,8 +10,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import util.MySpringUtil;
 import util.MyUtil;
 import util.debug.DebugUtil;
+import cock.util.FileUtil;
 
 import com.flow.business.web.BusinessControl;
 import com.flow.common.util.BaseController;
@@ -71,7 +74,14 @@ public class DebugControl extends BaseController {
 	
 	private Class<?> getClass(String className) {
 		String proPath = "/flow";
-		return MyUtil.getClass(proPath,className);
+		try {
+			return MyUtil.getClass(proPath,className);
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 	
 	private Map<String, String> getEntities() {

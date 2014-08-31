@@ -15,6 +15,11 @@
 		<artifactId>myFrame</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</dependency>
+	<dependency>
+		<groupId>cock</groupId>
+	    <artifactId>cock</artifactId>
+	    <version>0.0.1-SNAPSHOT</version>
+	</dependency>
 	  	
   <!-- spring start -->
   	<dependency>

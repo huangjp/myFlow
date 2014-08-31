@@ -2,6 +2,8 @@ package com.flow.common.test;
 
 import java.util.List;
 
+import cock.util.FileUtil;
+
 import com.flow.common.util.debug.DebugUtil;
 
 public class generateProperties {
