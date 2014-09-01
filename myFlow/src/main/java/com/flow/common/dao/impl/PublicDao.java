@@ -497,11 +497,11 @@ public class PublicDao implements IPublicDao {
 		} catch (Exception e) { return new ArrayList<T>();}
 	}
 
-	@SuppressWarnings("deprecation")
 	@Override
 	public <T> Integer getEntityMaxId(Class<T> c) {
-		String sql = "select max(t.id) from " + c.getSimpleName().toLowerCase() + " as t";
-		return jdbcTamplate.queryForInt(sql);
+//		String sql = "select max(t.id) from " + c.getSimpleName().toLowerCase() + " as t";
+//		return jdbcTamplate.queryForInt(sql);
+		return null;
 	}
 
 //	@Override

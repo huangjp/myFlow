@@ -86,7 +86,7 @@ public class DebugControl extends BaseController {
 	
 	private Map<String, String> getEntities() {
 		Map<String, String> map = new HashMap<String, String>();
-		String path = "E:\\Workspaces\\MyEclipse Professional\\myFlow_1\\src\\org\\flow\\com\\business\\entity\\";
+		String path = "E:\\java\\git\\myFlow\\myFlow\\src\\main\\java\\com\\flow\\business\\entity";
 		List<String> list = FileUtil.scanFilePaths(path);
 		List<Class<?>> cc = new ArrayList<Class<?>>();
 		try {

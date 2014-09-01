@@ -33,9 +33,9 @@
 	
 	
 	<!-- 组件扫描 -->
-	<context:component-scan base-package="web"/>
-	<context:component-scan base-package="dao"/>
-	<context:component-scan base-package="service"/>
+	<context:component-scan base-package="com.flow.*.web"/>
+	<context:component-scan base-package="com.flow.*.dao"/>
+	<context:component-scan base-package="com.flow.*.service"/>
 	
 	<mvc:annotation-driven />
 	

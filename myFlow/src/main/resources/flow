@@ -1,4 +1,5 @@
 #gererateProperties
 #Fri May 02 03:52:51 CST 2014
-Flow=web.FlowControl
-MyBusiness=web.BusinessControl
+Flow=com.flow.engine.web.FlowControl
+MyBusiness=com.flow.business.web.BusinessControl
+path=E:/java/git/myFlow/myFlow
