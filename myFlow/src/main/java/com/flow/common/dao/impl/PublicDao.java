@@ -428,8 +428,7 @@ public class PublicDao implements IPublicDao {
 	public <T> List<T> getEntitiesByAttr(T entity) {
 		if(entity == null) return new ArrayList<T>();
 		try {
-			return (List<T>)getEntitiesByAttrAnd(
-					entity.getClass(), castMap(entity));
+			return (List<T>)getEntitiesByAttrAnd(entity.getClass(), castMap(entity));
 		} catch (Exception e) {
 			e.printStackTrace();
 			return new ArrayList<T>();

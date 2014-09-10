@@ -50,7 +50,7 @@ public class DebugControl extends BaseController {
 	@RequestMapping("/test.do")
 	public String goToTest(Model model,String entityName) {
 		try {
-			Class<?> c = Class.forName("entity." + entityName);
+			Class<?> c = Class.forName("com.flow.business.entity." + entityName);
 			String String1 = MySpringUtil.getClassAttrs(c);
 			Map<String, Object> map = new HashMap<String, Object>();
 			String String2 = DebugUtil.getJavaFile(c, request);
@@ -92,8 +92,11 @@ public class DebugControl extends BaseController {
 		try {
 			for(String s : list) {
 				if(s.contains(".java")) {
-					String str = "src\\org\\flow\\com\\business\\";
-					cc.add(MyUtil.getClass(s.substring(s.indexOf(str) + str.length(),s.indexOf(".")).replace("\\", ".")));
+					String str = "src\\main\\java\\";
+//					cc.add(MyUtil.getClass(s.substring(s.indexOf(str) + str.length(),s.indexOf(".")).replace("\\", ".")));
+					String classPath = s.substring(s.indexOf(str) + str.length(),s.indexOf(".")).replace("\\", ".");
+					Class<?> c = Class.forName(classPath);
+					cc.add(c);
 				}
 			}
 		} catch (Exception e) {

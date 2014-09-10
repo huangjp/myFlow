@@ -1,5 +1,6 @@
 package com.flow.business.web;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,9 +9,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import cock.util.MyUtil;
+
 import com.flow.business.entity.BsiGroup;
 import com.flow.business.entity.BsiPost;
 import com.flow.business.entity.BsiUser;
+import com.flow.business.entity.Menu;
 import com.flow.business.entity.MyBusiness;
 import com.flow.business.entity.vo.BusinessDataVo;
 import com.flow.business.service.IBusinessService;
@@ -48,7 +52,7 @@ public class BusinessControl extends BaseController {
 	
 	@RequestMapping(value="/getUsers.do", method = RequestMethod.POST)
 	public @ResponseBody String getUsers() {
-		Object object = this.getUsers();
+		Object object = this.service.getUsers();
 		return getJson(object);
 	}
 	
@@ -68,5 +72,11 @@ public class BusinessControl extends BaseController {
 	public @ResponseBody String deleteBusiness(MyBusiness business) {
 		boolean bool = this.service.deleteBusiness(business);
 		return getJson(bool);
+	}
+	
+	@RequestMapping(value="/getMenus.do",method = RequestMethod.POST)
+	public @ResponseBody Object getMenus(String type) {
+		List<Menu> menus = this.service.getMenus(type);
+		return MyUtil.getMap(type, menus);
 	}
 }

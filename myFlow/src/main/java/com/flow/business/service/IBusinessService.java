@@ -7,6 +7,7 @@ import com.flow.business.entity.BsiGroup;
 import com.flow.business.entity.BsiPost;
 import com.flow.business.entity.BsiUser;
 import com.flow.business.entity.MyBusiness;
+import com.flow.business.entity.Menu;
 import com.flow.business.entity.vo.BusinessDataVo;
 
 public interface IBusinessService {
@@ -28,4 +29,6 @@ public interface IBusinessService {
 	List<BsiPost> getPostHasUser();
 	
 	List<BsiUser> getUsers();
+	
+	List<Menu> getMenus(String type);
 }

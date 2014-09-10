@@ -1,11 +1,13 @@
 package com.flow.business.service.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.annotation.Resource;
+
 import org.springframework.stereotype.Service;
 
 import com.flow.business.entity.BsiGroup;
@@ -14,10 +16,12 @@ import com.flow.business.entity.BsiPost;
 import com.flow.business.entity.BsiUser;
 import com.flow.business.entity.BsiUserHasGroup;
 import com.flow.business.entity.BsiUserHasPost;
+import com.flow.business.entity.Menu;
 import com.flow.business.entity.MyBusiness;
 import com.flow.business.entity.vo.BusinessDataVo;
 import com.flow.business.service.IBusinessService;
 import com.flow.common.base.DaoService;
+import com.flow.common.util.RecursiveUtil;
 import com.flow.engine.entity.Business;
 import com.flow.engine.entity.Flow;
 import com.flow.engine.entity.User;
@@ -26,7 +30,7 @@ import com.flow.engine.service.IFlowInstanceService;
 @Service
 public class BusinessService extends DaoService implements IBusinessService {
 
-	@Autowired
+	@Resource
 	private IFlowInstanceService instanceService;
 	
 	@Override
@@ -216,4 +220,40 @@ public class BusinessService extends DaoService implements IBusinessService {
 		}
 	}
 
+	@Override
+	public List<Menu> getMenus(String type) {
+		List<Menu> menus = new ArrayList<Menu>();
+		try {
+			if("all".equals(type)) {
+				menus = RecursiveUtil.recursive(this.getList(Menu.class), "id", "menuId", "menus");
+			} else if("parent".equals(type)) {
+				Menu menu = new Menu();
+				menu.setMenuId(null);
+				menus = this.getList(menu);
+			} else {
+				Menu menu = new Menu();
+				menu.setMenuId(Integer.parseInt(type));
+				menus = this.getList(menu);
+			} 
+		} catch (NoSuchMethodException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SecurityException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InvocationTargetException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (NoSuchFieldException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return menus;
+	}
 }
