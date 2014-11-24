@@ -6,7 +6,7 @@ import cock.util.FileUtil;
 
 import com.flow.common.util.debug.DebugUtil;
 
-public class generateProperties {
+public class GenerateProperties {
 	public static void main(String[] args) {
 		String entityPath = "E:\\Workspaces\\MyEclipse Professional\\myFlow_1\\src\\org\\flow\\com\\engine\\entity\\";
 		String controlPath = "E:\\Workspaces\\MyEclipse Professional\\myFlow_1\\src\\org\\flow\\com\\engine\\web\\";
