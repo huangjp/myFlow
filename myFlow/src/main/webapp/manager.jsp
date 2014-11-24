@@ -14,43 +14,44 @@
 <script src="js/jquery-2.1.1.js"></script>
 <script src="js/jquery.tmpl.js"></script>
 <script src="js/flow.js"></script>
-<script type="text/javascript">
-	$(function() {
-		$.aw($.Url().getMenus(), $.Data("parent"), "POST", $.Url().getMenus);
-	});
-	function clickSubMenu(obj) {
-		var data = $(obj).attr("data");
-		$.aw($.Url().getMenus(), $.Data(data), "POST", $.Url().getMenus);
-	}
-</script>
+<script src="js/dialog.js"></script>
 </head>
-<body>
+<body onload="_manager.init();">
 	<!-- 头部信息容器 -->
-	<div class="flow_head">头部信息容器</div>
+	<div onselectstart="return false;" class="flow_head">头部信息容器</div>
 	<!-- 中部内容容器 -->
-	<div class="flow_center">
-		<!-- 左侧菜单容器 -->
-		<div class="flow_left">
+	<div class="flow_center dialog_center">
+		<!-- 左侧菜单容器 draggable="true"  -->
+		<div onselectstart="return false;" class="flow_left_dialog">
+			<div class="dialog-title">左侧菜单容器</div>
 			<script type="text/html">
-			<div>
+			<div class="dialog-content">
 <!-- 				<a href="#">{{= name}}</a> -->
-				<img src="{{= icon}}" onclick="clickSubMenu(this);" data={{= id}} onerror="$(this).attr('onerror','').attr('src','');"/>
+				<img src="{{= icon}}" onclick="_manager.clickSubMenu(this);" data={{= id}} onerror="$(this).attr('onerror','').attr('src','');"/>
 			</div>
-			</script>
+ 			</script>
+			<div class="dialog-content">
+				<img hegiht="120px;" onclick="alert('2354');" src="images/menu/add.png"/>
+			</div>
 		</div>
 		<!-- 子菜单树列表容器 -->
-		<div class="flow_menu_tree">
+		<div onselectstart="return false;" class="flow_menu_tree_dialog">
+			<div class="dialog-title">子菜单树列表容器</div>
 			<script type="text/html">
-			<div>
+			<div class="dialog-content">
  				<a href="{{= path}}">{{= name}}</a> 
 <!--				<img src="{{= icon}}" onerror="$(this).attr('onerror','').attr('src','');"/> -->
 			</div>
 			</script>
 		</div>
 		<!-- 菜单内容视图容器 -->
-		<div class="flow_content">菜单内容视图容器</div>
+		<div onselectstart="return false;" class="flow_content_dialog">
+			<div class="dialog-title">菜单内容视图容器</div>
+		</div>
 		<!-- 右侧提示容器 -->
-		<div class="flow_message">右侧提示容器</div>
+		<div onselectstart="return false;" class="flow_message_dialog">
+			<div class="dialog-title">右侧提示容器</div>
+		</div>
 	</div>
 	<!-- 底部状态显示栏 -->
 	<div class="flow_bottom">底部状态显示栏</div>

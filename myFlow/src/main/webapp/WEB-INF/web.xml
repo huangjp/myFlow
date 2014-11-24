@@ -56,9 +56,8 @@
 	</listener>
 	
 	<welcome-file-list>
-		<welcome-file>debug.jsp</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
-
 
 	<filter>
 		<filter-name>encodingFilter</filter-name>

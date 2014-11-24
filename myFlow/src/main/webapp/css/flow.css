@@ -1,8 +1,8 @@
 @charset "UTF-8";
 /*common style:head leftMenu rightMessage bottom*/
 .flow_head {
-	background-color:#f9f9f9; 
-	border-bottom:1px solid #ededed;  
+	background-color:#1D992C; 
+	border-bottom:1px solid #0C31A3;  
 	width: 100%;
 	height: 100px;
 	top: 0%;
@@ -10,68 +10,93 @@
 	line-height:100px;
 	text-align:center;
 	margin: 0 0 0 -50%;
+	z-index: 9;
 	position: fixed;
 }
 .flow_center {
-/* 	background-color:#f9f9f9;  */
-/* 	border:1px solid #ededed;   */
-/* 	width: 100%; */
-/* 	padding: 10px; */
-/* 	margin: 10px; */
 	margin-top: 100px;
-}
-.flow_left {
-	background-color:#f9f9f9; 
-	border:1px solid #ededed;  
-	width: 8%;
-	padding: 10px;
-	margin: 10px;
-	float: left;
-}
-.flow_left>div {
-	border: 1px solid #C3E9E1;
-	margin-bottom: 10px;
-	width: 150px;
-	height: 120px;
-}
-.flow_menu_tree {
-	background-color:#f9f9f9; 
-	border:1px solid #ededed;  
-	width: 12%;
-	padding: 10px;
-	margin: 10px;
-	float: left;
-}
-.flow_content {
-	background-color:#f9f9f9; 
-	border:1px solid #ededed; 
-	width:56%;
-	padding: 10px;
-	margin: 10px;
-	float: left;
-}
-.flow_message {
-	background-color:#f9f9f9; 
-	border:1px solid #ededed; 
-	width:15%;
-	padding: 10px;
-	margin: 10px;
-	float: left;
 }
 .flow_bottom {
 	height:40px; 
 	width:100%; 
 	line-height:40px; 
 	text-align:center; 
-	background-color:#f9f9f9; 
-	border-top:1px solid #ededed;  
+	background-color:#B6D1F8; 
+	border-top:1px solid #133F9C;  
 	position:absolute; 
 	top:100%; 
 	left:50%; 
 	margin:-42px 0 0 -50%;
 	position: fixed;
 }
+
+<!-- 拖动样式 start -->
+
+.dialog_center{
+    height:100%;
+    width:100%;
+    padding:0;
+    margin:0;
+}
+.flow_left_dialog {
+    position:absolute;
+    background-color:#ccc;
+    -webkit-box-shadow:1px 1px 3px #292929;
+    -moz-box-shadow:1px 1px 3px #292929;
+    box-shadow:1px 1px 3px #292929;
+    margin-left: 0%;
+	margin-top: 10px;
+	width: 9%;
+}
+.flow_menu_tree_dialog{
+	position:absolute;
+    background-color:#ccc;
+    -webkit-box-shadow:1px 1px 3px #292929;
+    -moz-box-shadow:1px 1px 3px #292929;
+    box-shadow:1px 1px 3px #292929;
+    margin-left: 9.5%;
+	margin-top: 10px;
+	background-color:#f9f9f9; 
+/* 	border:1px solid #ededed;   */
+	width: 12%;
+}
+.flow_content_dialog {
+    position:absolute;
+    background-color:#ccc;
+    -webkit-box-shadow:1px 1px 3px #292929;
+    -moz-box-shadow:1px 1px 3px #292929;
+    box-shadow:1px 1px 3px #292929;
+	width:60%;
+    margin-left: 22%;
+	margin-top: 10px;
+}
+.flow_message_dialog {
+    position:absolute;
+    background-color:#ccc;
+    -webkit-box-shadow:1px 1px 3px #292929;
+    -moz-box-shadow:1px 1px 3px #292929;
+    box-shadow:1px 1px 3px #292929;
+	width:15%;
+    margin-left: 82.5%;
+	margin-top: 10px;
+}
+.dialog-title {
+    color:#fff;
+    background-color:#2DA82D;
+    font-size:12pt;
+    font-weight:bold;
+/*     padding:4px 6px; */
+    width: 100%;
+	height: 25px;
+    cursor:move;
+}
+.dialog-content{
+    padding:4px;
+}
+<!-- 拖动样式 end -->
+            
 /*common style end*/
+
 /*用户、组织机构管理的样式 start*/
 
 /*用户、组织机构管理的样式 end*/
