@@ -61,8 +61,33 @@ var _manager = (function() {
 			$(".flow_content_dialog>div.flow_content").html(html);
 		}
 		
+//		function createXMLHttpRequest() {
+//			var xmlHttp;
+//			if (window.XMLHttpRequest) {
+//				xmlHttp = new XMLHttpRequest();
+//			}
+//			if (window.ActiveXObject) {
+//				xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+//			}
+//			return xmlHttp;
+//		}
+		
 		//通用ajax请求方法
 		this.aw = function(url, data, type, foo) {
+			
+//			var req = createXMLHttpRequest();
+//			req.open("POST", url, true);
+//			req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+//			req.send("type=all");
+//			req.responseType = "json";
+//			req.onreadystatechange = function() {
+//				if (req.readyState == 4 && req.status == 200) {
+//					foo(req.response);
+//				}
+//			};
+			
+			
+			
 			$.ajax({
 				url: url,
 				type:type,
